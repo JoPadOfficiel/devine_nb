@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devine le Nombre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Devine le Nombre Mystère</h1>
+        <div class="game-container">
+            <p>Devinez un nombre entre 1 et 100</p>
+            <div class="input">
+                <input type="number" id="nombre" min="1" max="100" placeholder="Entrez un nombre">
+                <button id="submitBtn" type="button">Soumettre</button>
+            </div>
+            <div id="message" class="message"></div>
+            <div id="attempts" class="attempts">Nombre d'essais : 0</div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
