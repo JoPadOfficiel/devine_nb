@@ -59,10 +59,11 @@ function devinerJeuxHTML() {
     let essai = 0;
     let message = document.getElementById('message');
     let attempts = document.getElementById('attempts');
-    let input = document.getElementById('nombre');
-    let btn = document.getElementById('submitBtn');
+    let form = document.getElementById('form');
 
-    btn.onclick = function() {
+    form.onsubmit = function(event) {
+        event.preventDefault();
+        let input = document.getElementById('nombre');
         let nb = parseInt(input.value);
         if (nb < nbMystere) {
             message.textContent = "Le nombre deviné est trop bas";
@@ -70,7 +71,7 @@ function devinerJeuxHTML() {
             message.textContent = "Le nombre deviné est trop haut";
         } else {
             message.textContent = "Bravo, vous avez deviné le nombre mystère en " + essai + " essais";
-            btn.disabled = true;
+            form.disabled = true;
         }
         essai++;
         attempts.textContent = "Nombre d'essais : " + essai;
@@ -159,6 +160,6 @@ function devinerJeuxHTMLBonus() {
             btn.onclick();
         }
     });
-}
+}   
 
 devinerJeuxHTMLBonus();
